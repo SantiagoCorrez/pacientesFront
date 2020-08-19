@@ -1,0 +1,71 @@
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+    <p class="type_18 text-white">Estamos obteniendo su información clínica, por favor espere...</p>
+  </ngx-spinner>
+  <div class="bg-zona pl-3 pr-3 pt-2 pb-2 text-white">
+    <div class="row">
+      <div class="col">
+        <i class="material-icons type_14 float-left">local_hospital</i>
+        <span class="float-left ml-1">Pagar citas</span>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 type_14 pl-0 pr-0">
+    <table class="table bg-white text-secondary type_14 table-responsive">
+      <tbody>
+          
+        <tr *ngIf="estado">
+          <td>{{ mensaje }}</td>
+        </tr>
+        <div *ngIf="!estado">
+          <tr *ngFor="let dato of datos | paginate: {itemsPerPage: 7, currentPage: pageActual}; let i = index">
+            <td>
+              <input type="checkbox" [id]="i" (click)="activatePay(dato, i, $event)" >
+            </td>
+            <td>
+              <strong class="text-dark">Fecha y hora cita: </strong> {{ dato?.fechaCitaCa }}<br>
+              <strong class="text-dark">Tipo cita: </strong>{{ dato?.descripcion }}<br>
+              <strong class="text-dark">Referencia: </strong>{{ dato?.idCita }}<br>
+              <strong class="text-dark">Nombre: </strong>{{ dato?.nombreCompleto }}
+            </td>
+            <td>
+              <strong class="text-dark">Valor a pagar: </strong>{{ dato?.costoPaciente | currency }}
+            </td>
+            <td *ngIf="viewPay">
+              <strong class="text-dark" >
+                <label [for]="i">
+                  <mat-icon>delete</mat-icon>
+                </label>
+              </strong>
+            </td>
+            <td class="text-right" *ngIf="tipoCita && !buttonsView" >
+              <button mat-menu-item (click)="sendPay(dato)" class="btn bg-zona text-white mr-1 mb-2 ml-5" *ngIf="!viewPay">Pagar</button>
+              <button type="button" class="btn bg-zona text-white mr-1 mb-2 ml-5" (click)="gestionCita(dato)" *ngIf="!viewPay">Gestionar cita</button>
+            </td>
+            <td class="text-right" *ngIf="tipoCita && buttonsView" >
+                <button mat-menu-item class="btn bg-zona text-white mr-1 mb-2 ml-5">Reprogramas / Cancelar</button>
+                <button type="button" (click)="openDialog()" class="btn bg-zona text-white mr-1 mb-2 ml-5" (click)="gestionCita(dato)">Cargar documento</button>
+            </td>
+          </tr>
+        </div>
+      </tbody>
+    </table>
+  </div>
+  <div class="center-align mt-2" *ngIf="page">
+    <pagination-controls (pageChange)="pageActual = $event"></pagination-controls>
+  </div>
+  
+  <!-- boton de pagos masivo  -->
+  <div *ngIf="viewPay">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 d-flex justify-content-center">
+        <mat-card>
+          <strong>Total a pagar: </strong><p>{{ demoValor | currency }}</p>
+          <button (click)="sendPayMassive()" class="btn bg-zona text-white mb-2" mat-flat-button >
+            Pagar citas
+          </button>
+        </mat-card>
+      </div>
+      </div>
+    </div>
+  </div>

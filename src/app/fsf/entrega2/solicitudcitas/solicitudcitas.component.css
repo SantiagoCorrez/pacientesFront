@@ -1,0 +1,27 @@
+/**
+  Default Markup
+**/
+
+body {
+    background: #F0E5E1 ;
+  }
+  
+label {
+    display: grid;
+    margin-bottom: 0;
+}
+  /**
+    Component
+  **/
+.card-input-element {
+    display: none;
+} 
+.card-input:hover {
+    cursor: pointer;
+}
+.card-input-element:checked + .card-input {
+    box-shadow: 0 0 3px 4px #5ac3f0;
+    content: "\f058";
+}
+  
+  

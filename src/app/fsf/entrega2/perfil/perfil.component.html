@@ -1,0 +1,181 @@
+<div class="wrapper bg-light">
+  <!-- Sidebar  -->
+  <nav id="sidebar" class=" type_12">
+    <div class="sidebar-header">
+      <img class="img-fluid" src="/assets/images/logo.png" alt="" /> </div>
+
+      <ul class="list-unstyled components">
+        <li class="active">
+          <a routerLink="/portal">Inicio</a>
+        </li>
+        <li>
+          <a routerLink="/citas">Solicitud de citas</a>
+        </li>
+        <!--<li>
+          <a routerLink="/portal">Eventos recientes </a>
+        </li>-->
+        <li>
+          <a routerLink="/examenes">Resultados de exámenes</a>
+        </li>
+        <li>
+          <a routerLink="/historial">Historial paciente</a>
+        </li>
+        <li>
+          <a routerLink="/documentos">Listado de documentos </a>
+        </li>
+        <li>
+          <a routerLink="/perfil">Mi perfil</a>
+        </li>
+        <!--
+        <li>
+          <a routerLink="/portal">Ayuda </a>
+        </li>-->
+      </ul>
+
+
+  </nav>
+
+  <!-- Page Content  -->
+  <div id="content">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+      <div class="container-fluid">
+
+        <button type="button" id="sidebarCollapse" class="btn bg-transparent">
+          <i class="material-icons">list</i>
+        </button>
+        <img class="img-fluid img-side-hide mr-0" src="/assets/images/logo.png" alt="" />
+        <button class="btn d-inline-block d-lg-none ml-auto bg-transparent" type="button" data-toggle="collapse"
+          data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="material-icons">account_circle</i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item active text-right">
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-lg-10 ml-7">
+                  <a class="nav-link m-0 p-0 type_18" href="#">{{ fullname }}<br></a>
+                  <small><a class="type_14" href="#" (click)="logout()">Cerrar sesión</a></small>
+                </div>
+                <!-- <div class="col-md-3 col-sm-1 col-lg-2	  d-sm-none d-md-none d-lg-block"> -->
+                  <!--<img src="images/profile.png" style="max-width: 50px" class="img-fluid mr-5" alt="" />-->
+                <!-- </div> -->
+              </div>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="col-12 type_14">
+      <header class="bg-primary pl-3 pr-3 pt-2 pb-2 text-white">
+        <div class="row">
+          <div class="col">
+            <i class="material-icons type_14 float-left">account_circle</i>
+            <span class="float-left mt-1 ml-1">Perfil</span>
+          </div>
+        </div>
+      </header>
+      <div class="row">
+        <div class="col mb-3">
+
+          <div class="col-12  border-bottom">
+            <div class="row bg-white">
+              <!--<div class="col-md-2 col-sm-4 p-3 text-center">
+                <img style="width: 100px; min-width: 60px" src="images/profile.png" class="img-fluid" alt="" />
+                <button type="submit" class="btn btn-primary btn-sm type_14 mt-2" disabled>Cambiar</button>
+              </div>-->
+              <div class="col-md-10 col-sm-8 type_14 p-3 ">
+                <form>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="tipodocumento">Tipo de documento*</label>
+                      <select required class="form-control form-control-sm type_14" style="height: 40px" id="tipodocumento"
+                        value="{{ dataPac?.objeto.tipoDocId}}">
+                        <option value="2">REGISTRO CIVIL</option>
+                        <option value="3">TARJETA DE IDENTIDAD</option>
+                        <option value="4">CEDULA CIUDADANIA</option>
+                        <option value="5">CEDULA EXTRANJERIA</option>
+                        <option value="6">NIT</option>
+                        <option value="M">MENOR SIN IDENTIFICACION</option>
+                        <option value="A">ADULTO SIN IDENTIFICACION</option>
+                        <option value="D">CARNÉ DIPLOMÁTICO</option>
+                        <option value="S">SALVOCONDUCTO</option>
+                        <option value="N">NUIP</option>
+                        <option value="P">PASAPORTE</option>
+                      </select>
+                      <!--<p class="center">{{selectedRegistro.fechayear}} - {{selectedRegistro.fechames}} - {{selectedRegistro.dechadia}}</p>-->
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="documento">Documento*</label>
+                      <input type="number" class="form-control form-control-sm type_14" style="height: 40px" required min="1"
+                        pattern="^[0-9]+" id="documento" required value="{{ dataPac?.objeto.numDocId }}">
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="Nombre">Nombres*</label>
+                      <input type="text" class="form-control form-control-sm type_14" style="height: 40px" id="Nombre"
+                      value="{{ dataPac?.objeto.nombres }}">
+                    </div>
+          
+                    <div class="form-group col-md-6">
+                      <label for="inputAddress">Apellidos*</label>
+                      <div class="input-group ">
+                        <input type="text" placeholder="Apellido paterno" class="form-control form-control-sm type_14"
+                          style="height: 40px" id="Apellidos" value="{{ dataPac?.objeto.primerApellido }}">
+                        <input type="text" placeholder="Apellido materno" class="form-control form-control-sm type_14"
+                          style="height: 40px" id="Apellidos Materno"  value="{{ dataPac?.objeto.segundoApellido }}">
+                      </div>
+                    </div>
+          
+                  </div>
+                  <div class="form-row mb-4">
+                    <div class="form-group col-md-6">
+                      <label for="Sexo">Genero*</label><br>
+                      <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" value="M" id="Masculino" name="genero" class="custom-control-input">
+                        <label class="custom-control-label mt-1" for="Masculino">Masculino</label>
+                      </div>
+                      <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" value="F" id="Femenino" name="genero" class="custom-control-input">
+                        <label class="custom-control-label mt-1" for="Femenino">Femenino</label>
+                      </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="nacimiento">Fecha Nacimiento*</label>
+                      <input type="date" class="form-control form-control-sm type_14" style="height: 40px" id="nacimiento">
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="mail">Email*</label>
+                      <input type="email" class="form-control form-control-sm type_14" style="height: 40px" id="mail"
+                        placeholder="example@mail.com"  value="{{ const_Session?.mail }}">
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="Celular">Celular*</label>
+                      <input type="number" class="form-control form-control-sm type_14" style="height: 40px" id="Celular"
+                        placeholder="321 987 6543">
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="password">Contraseña*</label>
+                      <input type="password" class="form-control form-control-sm type_14" style="height: 40px" id="password"
+                        value="{{ const_Session?.password }}">
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary btn-sm type_14 mr-2" disabled>Guardar</button>
+                  <button type="submit" class="btn btn-primary btn-sm btn-outline-primary type_14">Cancelar</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,161 @@
+<div class="wrapper bg-light">
+  <!-- Sidebar  -->
+  <nav id="sidebar" class=" type_12">
+    <div class="sidebar-header">
+      <img class="img-fluid" src="/assets/images/logo.png" alt="" /> </div>
+
+      <ul class="list-unstyled components">
+        <li class="active">
+          <a routerLink="/portal">Inicio</a>
+        </li>
+        <li>
+          <a routerLink="/citas">Solicitud de citas</a>
+        </li>
+        <!--<li>
+          <a routerLink="/portal">Eventos recientes </a>
+        </li>-->
+        <li>
+          <a routerLink="/examenes">Resultados de exámenes</a>
+        </li>
+        <li>
+          <a routerLink="/historial">Historial paciente</a>
+        </li>
+        <li>
+          <a routerLink="/documentos">Listado de documentos </a>
+        </li>
+        <li>
+          <a routerLink="/perfil">Mi perfil</a>
+        </li>
+        <!--
+        <li>
+          <a routerLink="/portal">Ayuda </a>
+        </li>-->
+      </ul>
+
+
+  </nav>
+
+  <!-- Page Content  -->
+  <div id="content">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+      <div class="container-fluid">
+
+        <button type="button" id="sidebarCollapse" class="btn bg-transparent">
+          <i class="material-icons">list</i>
+        </button>
+        <img class="img-fluid img-side-hide mr-0" src="/assets/images/logo.png" alt="" />
+        <button class="btn d-inline-block d-lg-none ml-auto bg-transparent" type="button" data-toggle="collapse"
+          data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="material-icons">account_circle</i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item active text-right">
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-lg-10 ml-7">
+                  <a class="nav-link m-0 p-0 type_18" href="#">{{ fullname }}<br></a>
+                  <small><a class="type_14" href="#" (click)="logout()">Cerrar sesión</a></small>
+                </div>
+                <!-- <div class="col-md-3 col-sm-1 col-lg-2	  d-sm-none d-md-none d-lg-block"> -->
+                  <!--<img src="images/profile.png" style="max-width: 50px" class="img-fluid mr-5" alt="" />-->
+                <!-- </div> -->
+              </div>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="col-12 type_12">
+      <div class="row">
+        <div class="col mb-3">
+
+          <div class="col-12  border-bottom">
+            <div class="row bg-white">
+              <!--<div class="col-md-2 col-sm-4 p-3 text-center">
+                <img style="width: 100px; min-width: 60px" src="images/profile.png" class="img-fluid" alt="" />
+              </div>-->
+              <div class="col-md-10 col-sm-8 type_14 p-3 ">
+                <h5>{{ const_Session.cn }}<br></h5>
+                <p>Consulte los datos de su cuenta y acceda a ellos siempre que los necesite</p>
+                <button type="button" class="btn btn-primary btn-sm type_16 mb_2 font-weight-bold">Solicitar cita</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 type_14">
+      <header class="bg-primary pl-3 pr-3 pt-2 pb-2 text-white ">
+
+        <div class="row">
+          <div class="col">
+            <i class="material-icons type_12 float-left">picture_as_pdf</i>
+            <span class="float-left mt-1 ml-1">Listado de documentos</span>
+          </div>
+          <div class="col"><a class="float-right " href="#"><u>Ver más</u></a></div>
+        </div>
+
+      </header>
+      <table class="table bg-white text-secondary type_14 table-responsive">
+        <tbody>
+          <tr>
+            <td class="pb-0">
+              <p class="mr-3 mb-0"><span class="text-dark">ORTOPEDIA</span></p>
+            </td>
+
+            <td class="text-right">
+              <button type="button" class="btn btn-primary btn-sm type_14">Cargar</button>
+            </td>
+          </tr>
+          <tr>
+            <td class="pb-0">
+              <p class="mr-3 mb-0"><span class="text-dark">NEUROLOGÍA</span></p>
+            </td>
+
+            <td class="text-right">
+              <button type="button" class="btn btn-primary btn-sm type_14">Cargar</button>
+            </td>
+          </tr>
+          <tr>
+            <td class="pb-0">
+              <p class="mr-3 mb-0"><span class="text-dark">ORTOPEDIA</span></p>
+            </td>
+
+            <td class="text-right">
+              <button type="button" class="btn btn-primary btn-sm type_14">Cargar</button></td>
+          </tr>
+
+          <tr>
+            <td class="pb-0">
+              <p class="mr-3 mb-0"><span class="text-dark">ORTOPEDIA</span></p>
+            </td>
+            <td class="text-right">
+              <button type="button" class="btn btn-sm type_14">Volver a Cargar</button></td>
+          </tr>
+          <tr>
+            <td class="pb-0">
+              <p class="mr-3 mb-0"><span class="text-dark">ORTOPEDIA</span></p>
+            </td>
+
+            <td class="text-right">
+              <button type="button" class="btn btn-primary btn-sm type_14">Cargar</button></td>
+          </tr>
+
+          <tr>
+            <td class="pb-0">
+              <p class="mr-3 mb-0"><span class="text-dark">ORTOPEDIA</span></p>
+            </td>
+            <td class="text-right">
+              <button type="button" class="btn btn-sm type_14">Volver a Cargar</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>

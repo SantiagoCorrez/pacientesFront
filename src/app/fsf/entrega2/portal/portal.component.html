@@ -1,0 +1,118 @@
+<div class="wrapper bg-light">
+  <!-- Sidebar  -->
+  <nav id="sidebar" class=" type_12">
+    <div class="sidebar-header">
+      <img class="img-fluid mr-0" src="/assets/images/logo.png" alt="" />
+    </div>
+    <ul class="list-unstyled components">
+      <li class="active">
+        <a routerLink="/portal">Inicio</a>
+      </li>
+      <li>
+        <a routerLink="/citas">Citas agendadas</a>
+      </li>
+      <!--<li>
+        <a routerLink="/portal">Eventos recientes </a>
+      </li>-->
+      <li>
+        <a routerLink="/examenes">Resultados de exámenes</a>
+      </li>
+      <li>
+        <a routerLink="/historial">Historial paciente</a>
+      </li>
+      <!--<li>
+        <a routerLink="/portal">Mi perfil</a>
+      </li>
+      <li>
+        <a routerLink="/portal">Ayuda </a>
+      </li>
+      <li>
+        <a routerLink="/portal">Listado de documentos </a>
+      </li>-->
+    </ul>
+  </nav>
+
+  <!-- Page Content  -->
+  <div id="content">
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+      <div class="container-fluid">
+        <button type="button" id="sidebarCollapse" class="btn bg-transparent">
+          <i class="material-icons">list</i>
+        </button>
+        <img class="img-fluid img-side-hide mr-0" src="/assets/images/logo.png" alt="" />
+        <button class="btn d-inline-block d-lg-none ml-auto bg-transparent" type="button" data-toggle="collapse"
+          data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="material-icons">account_circle</i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item active text-right">
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-lg-12 ml-7">
+                  <a class="nav-link m-0 p-0 type_18" href="#">{{ fullname }}<br></a>
+                  <button class="btn bg-zona text-white btn-sm type_14 mb-1" (click)="logout()">Cerrar sesión</button><br>
+                  <app-changepass></app-changepass>
+                </div>
+                <!-- <div class="col-md-3 col-sm-1 col-lg-2	  d-sm-none d-md-none d-lg-block"> -->
+                  <!--<img src="/assets/images/profile.png" style="max-width: 50px" class="img-fluid" alt="" />-->
+                <!-- </div> -->
+              </div>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 mt-5">
+          <div class="container">
+            <div class="row">
+              <div class="col-3">
+                <a routerLink="/historial">
+                  <div class="cotentFsfb">
+                    <i class="fas fa-laptop-medical"></i>
+                  </div>
+                </a>
+              </div>
+              <div class="col-9">
+                  <a routerLink="/historial">Historial Clínico
+                  <p>Encuentre los datos más relevantes de su historia clínica.</p>
+                  </a>
+              </div>
+              <div class="col-3">
+                <a routerLink="/citas">
+                  <div class="cotentFsfb">
+                    <i class="far fa-calendar-alt"></i>
+                  </div>
+                </a>
+              </div>
+              <div class="col-9">
+                  <a routerLink="/citas">Citas Agendadas
+                  <p>Historial de citas a las cuales ya asistió o se encuentran programadas.</p>
+                  </a>
+              </div>
+              <div class="col-3">
+                <a routerLink="/examenes">
+                  <div class="cotentFsfb">
+                    <i class="fas fast fa-poll-h"></i>
+                  </div>
+                </a>
+              </div>
+              <div class="col-9">
+                  <a routerLink="/examenes">Resultados de Examenes
+                  <p>Acceda a los resultados de sus exámenes realizados.</p>
+                  </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 mt-3">
+          <img src="https://images.pexels.com/photos/1837138/pexels-photo-1837138.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="d-block w-100" alt="Image Fundación">
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

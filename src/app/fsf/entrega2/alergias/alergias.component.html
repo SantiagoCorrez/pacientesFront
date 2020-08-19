@@ -1,0 +1,37 @@
+<div class="col-12">
+  <div class="bg-zona pl-3 pr-3 pt-2 pb-2 text-white">
+    <div class="row">
+      <div class="col">
+        <i class="material-icons float-left">person</i>
+        <span class="float-left mt-1 ml-1">Alergias</span>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+  <div class=" border-bottom">
+    <div class="bg-white">
+      <div class="accordion" id="accordionExample">
+        <div class="card">
+          <div class="card-header" (click)="viewCard()">
+            <h6 class="text-zona cursor">
+              <!-- <button class="btn btn-link" type="button" > -->
+              Alergias <i class="fas fa-chevron-down"></i>
+              <!-- </button> -->
+            </h6>
+          </div>
+          <div id="collapseOne" class="collapse show pt-4 mb-3" aria-labelledby="headingOne" data-parent="#accordionExample"
+            *ngIf="activateCardPat">
+            <div *ngIf="!msj">
+              <div class="card-body type-FSFB pt-0 pb-0 text-secondary" *ngFor="let numeroAlergias of alergia">
+                {{ numeroAlergias }}
+              </div>
+            </div>
+            <div class="card-body type_18 type-FSFB pt-0 pb-0 text-secondary" *ngIf="msj">
+              {{ errores }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

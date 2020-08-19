@@ -1,0 +1,36 @@
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+  <p class="type_18 text-white">Estamos obteniendo su información clínica, por favor espere...</p>
+</ngx-spinner>
+<div class="bg-zona pl-3 pr-3 pt-2 pb-2 text-white">
+  <div class="row">
+    <div class="col">
+    </div>
+  </div>
+</div>
+<div class="col-12 type_14 pl-0 pr-0">
+  <table class="table bg-white text-secondary type_14">
+    <tbody>
+        
+      <tr *ngIf="estado">
+        <td>{{ mensaje }}</td>
+      </tr>
+      <div *ngIf="!estado">
+        <tr *ngFor="let dato of datos | paginate: {itemsPerPage: 4, currentPage: pageActual}; let i = index">
+          <td>
+            <strong class="text-dark">Identificador transacción: </strong> {{ dato?.idTransaccion }}<br>
+            <strong class="text-dark">Fecha registro: </strong> {{ dato?.fechaRegistro}}<br>
+            <strong class="text-dark">Referencia: </strong>{{ dato?.referencia }}<br>
+            <strong class="text-dark">Descripción: </strong>{{ dato?.descripcion }}<br>
+            <strong class="text-dark">Autorización/cus: </strong>{{ dato?.autorizacion }}<br>
+            <strong class="text-dark">Recibo: </strong>{{ dato?.numeroFactura }}<br>
+            <strong class="text-dark">Estado: </strong>{{ dato?.estado | translate }}<br>
+            <strong class="text-dark">Valor total: </strong>{{ dato?.valor }}<br>
+          </td>
+        </tr>
+      </div>
+    </tbody>
+  </table>
+</div>
+<div class="center-align mt-2" *ngIf="page">
+  <pagination-controls (pageChange)="pageActual = $event"></pagination-controls>
+</div>

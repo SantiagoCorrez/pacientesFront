@@ -1,0 +1,95 @@
+<!-- <app-navbar class="fixed-top"></app-navbar> -->
+<div class="background_home">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 d-flex justify-content-sm-center justify-content-lg-start mt-2">
+          <img class="img-ref img-fluid mb-3" src="/assets/images/logo_light.png" alt="Logo Fundación" />
+      </div>
+    </div>
+  </div>
+  <div class="row pr-5 pl-5 pt-0 pb-0 mg0">
+    <div class="col-md-12 col-lg-6 offset-lg-1 mt-n2 col-sm-12 text-white">
+      <h1 class="float-sm-left">Servicios en línea para pacientes: todo desde un mismo lugar</h1><br>
+      <h4 class="mb-3 hidden-xs">Sus datos de salud, resultados de exámenes y gestión de citas</h4>
+    </div>
+    <div class="col-lg-5 col-md-12 col-sm-12">
+      <form class="text-white">
+        <div class="form-row type_16">
+            <div class="alerts alert-danger" role="alert" *ngIf="msjError">
+              {{ msj }}
+            </div>
+          <div class="form-group col-md-12 mb-2">
+            <label for="Proximascitas">Tipo de documento</label>
+            <select required class="form-control form-control-sm type_14  mr-2 mt-2" style="height: 40px" id="Proximascitas" [(ngModel)]="selectedLogin.tipodocumento" [ngModelOptions]="{standalone: true}" (change)="validador()">
+              <option value="RC">Registro Civil</option>
+              <option value="TI">Tarjeta de identidad</option>
+              <option value="CC">Cédula de ciudadanía</option>
+              <option value="CE">Cédula de extranjería</option>
+              <option value="NIT">NIT</option>
+              <option value="NU">NUIP</option>
+              <option value="PA">Pasaporte</option>
+              <option value="AS">Adulto sin identificación</option>
+              <option value="CD">Carnet Diplomatico</option>
+              <option value="SC">Salvoconducto</option>
+              <option value="MS">Menor sin identificación</option>
+            </select>
+            <div class="alerts alert-danger" role="alert" *ngIf="validacion1">
+              Tipo de documento es un campo obligatorio!
+            </div>
+          </div>
+          <div class="form-group col-md-12 mb-2 ">
+            <label for="Documento">Documento</label>
+            <input required type="text" class="form-control form-control-sm type_14" style="height: 40px" id="Documento" [(ngModel)]="selectedLogin.documento" [ngModelOptions]="{standalone: true}" (change)="validador()">
+            <div class="alerts alert-danger" role="alert" *ngIf="validacion2">
+              Documento es un campo obligatorio o contiene caracteres especiales!
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label for="Contraseña">Contraseña</label>
+            <div class="input-group mb-3">
+              <input required [type]="typePass" class="form-control" aria-label="Recipient's username" aria-describedby="button-addon2" style="height: 40px" id="Contraseña" [(ngModel)]="selectedLogin.password" [ngModelOptions]="{standalone: true}" (change)="validador()">
+            <div class="input-group-append">
+              <button class="btn bg-zona text-white" type="button" id="button-addon2" (click)="viewPass()">
+                <i [class]="icons"></i>
+              </button>
+            </div>
+            </div>
+            
+            <div class="alerts alert-danger" role="alert" *ngIf="validacion3">
+              Contraseña es un campo obligatorio!
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+              <re-captcha (resolved)="resolved($event)" siteKey="6LdKPZcUAAAAAEhoLf4Druj_SgvZ9Bp8KZy1_9hl"></re-captcha>
+          </div>
+          <div class="form-group col-md-6 mb-2 ">
+          </div>
+          <div class="form-group col-md-12 mb-4 ">
+            <a class="link" routerLink="/recovery">Recuperar contraseña</a>
+          </div>
+          <div class="form-group mb-2" style="z-index: 1">
+            <button class="btn bg-zona text-white btn-lg type_14 mr-2" (click)="login()">Entrar</button>
+            <button class="btn btn-primary btn-md btn-outline-light type_14" routerLink="/registro">Registrarme</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="blockquote-footer">
+    <footer >
+      <div class="col-sm-12 mt-n6 text-white">
+        <a routerLink="/help" class="link" target="_blank">Ayuda</a>
+        <br>
+        <a routerLink="/policies" class="link" target="_blank">Política de tratamiento de datos</a>
+        <br>
+        <a routerLink="/faq" class="link" target="_blank">Preguntas frecuentes</a>
+      </div>
+      <div>
+        <a href="https://www.placetopay.com/web/" target="_blank">
+          <img src="https://static.placetopay.com/placetopay-logo.svg">
+        </a>
+      </div>
+    </footer>
+  </div>
+</div>
+

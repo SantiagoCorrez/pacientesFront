@@ -1,0 +1,6 @@
+<span class="example-pizza-party" *ngIf="accion === 'true'">
+  ✅ Se ha agregar su cita de {{ payMessages?.descripcionServ }} asignada el día {{ payMessages?.fechaCita }}
+</span>
+<span class="example-pizza-party" *ngIf="accion === 'false' ">
+  ⚠️ Se ha eliminado su cita de {{ payMessages?.descripcionServ }} asignada el día {{ payMessages?.fechaCita }}
+</span>

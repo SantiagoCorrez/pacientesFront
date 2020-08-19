@@ -1,0 +1,124 @@
+<div class="wrapper bg-light">
+  <!-- Sidebar  -->
+  <nav id="sidebar" class="sticky-top type_12">
+    <div class="sidebar-header">
+      <img class="img-fluid mt-3 mb-3 rounded mx-auto d-block" class="img-fluid mr-0" src="/assets/images/logo.png" alt="" />
+    </div>
+    <ul class="list-unstyled components" *ngIf="!nav">
+      <li>
+        <a routerLink="/login">Login</a>
+      </li>
+      <li>
+        <a routerLink="/registro">Registrarse</a>
+      </li>
+    </ul>
+
+    <ul class="list-unstyled components" *ngIf="nav">
+      <li>
+        <a routerLink="/historial">Historial Clínico</a>
+      </li>
+      <li>
+        <a routerLink="/citas">Citas agendadas</a>
+      </li>
+      <li>
+        <a routerLink="/examenes">Resultados de exámenes</a>
+      </li>
+        <div>
+            <a href="https://www.placetopay.com/web/" target="_blank">
+                <img src="https://static.placetopay.com/placetopay-logo.svg">
+            </a>
+        </div>
+    </ul>
+
+    <div class="col-sm-12 text-body info blockquote-footer-login" >
+      <a routerLink="/help" class="link type_14 " target="_blank">Ayuda</a>
+      <br>
+      <a routerLink="/policies" class="link type_14" target="_blank">Política de tratamiento de datos</a>
+        <br>
+        <a routerLink="/faq" class="link type_14" target="_blank">Preguntas frecuentes</a>
+    </div>
+  </nav>
+  <!-- Page Content  -->
+  <div id="content">
+    <div class="col-12 type_14 text-justify">
+      <h1 class="text-zona">Ayuda</h1>
+        <h2 class="text-zona">1. Que servicios puedo encontrar en este portal?</h2>
+        <p class="text-body">En este portal podrá encontrar información relacionada con los servicios de la Fundación Santa Fe de Bogotá a los cuales ha accedido. Dentro de él encontrará un resumen de las atenciones hospitalarias, ambulatorias y de urgencias que usted ha recibido, junto con el plan de alta realizado por el médico que lo atendió. Adicionalmente encontrará los resultados de exámenes de laboratorio e imágenes diagnósticas, así como el listado de citas pendientes y programadas.</p>
+        <h2 class="text-zona">2. Como acceso a los servicios del portal?</h2>
+        <p class="text-body">
+          Si usted es un usuario registrado, para iniciar sesión en el portal pacientes deberá ingresar la siguiente información:
+         
+          Si es un usuario existente en Zona Privada de pacientes se puede autenticar registrando los datos:
+        </p>
+        <p class="text-body">
+          <b>Tipo de documento</b>, campo obligatorio se refiere al tipo de documento del paciente el cual puede tener los valores: 
+        </p>
+        <img class="img-fluid mt-3 mb-3 rounded mx-auto d-block" src="/assets/images/ayuda/1.png" alt="ayuda1">
+        <p class="text-body">
+          <b>Documento</b>, campo obligatorio se refiere al número de documento del paciente, este campo puede aceptar números y letras
+        </p>
+        <img class="img-fluid mt-3 mb-3 rounded mx-auto d-block" src="/assets/images/ayuda/2.png" alt="ayuda2">
+        <p class="text-body">
+          <b>Contraseña</b>, campo tipo contraseña donde la información registrada no será legible en el campo.
+        </p>
+        <img class="img-fluid mt-3 mb-3 rounded mx-auto d-block" src="/assets/images/ayuda/3.png" alt="ayuda3">
+        <p class="text-body">
+          Si se activa la opción <b>Mostrar contraseña</b> será legible el texto que se registre en el campo Contraseña
+        </p>
+        <img class="img-fluid mt-3 mb-3 rounded mx-auto d-block" src="/assets/images/ayuda/4.png" alt="ayuda4">
+        <p class="text-body">
+          Captcha, control antirrobot que ayuda a proteger al sistema de Zona Privada de pacientes de FSFB del spam y del descifrado de contraseñas pidiéndole que complete una simple prueba que demuestra que es humano y no un ordenador que intenta acceder a una cuenta protegida con contraseña.
+        </p>
+        <p class="text-body">
+          Al checkear el campo “I’m not a robot”, se activa la pantalla propia del Captcha en donde se debe atender la instrucción solicitada, en este caso es Seleccionar todos los cuadros de la imagen donde se visualiza un paso peatonal. 
+        </p>
+        <img class="img-fluid mt-3 mb-3 rounded mx-auto d-block" src="/assets/images/ayuda/5.png" alt="ayuda5">
+        <p class="text-body">Se genera la selección solicitada y se da click en VERIFY</p>
+        <img class="img-fluid mt-3 mb-3 rounded mx-auto d-block" src="/assets/images/ayuda/6.png" alt="ayuda6">
+        <p class="text-body">
+          Cuando la verificación del CAPTCHA es exitoso visualizará el botón con una marca de verificación de éxito.
+        </p>
+        <img class="img-fluid mt-3 mb-3 rounded mx-auto d-block" src="/assets/images/ayuda/7.png" alt="ayuda7">
+        <p class="text-body">
+          Si el proceso de autenticación no es completado el CAPTCHA pierde su vigencia, en ese caso el campo CAPTCHA visualizará el mensaje “Verification expired. Check the checkbox again”.
+        </p>
+        <img class="img-fluid mt-3 mb-3 rounded mx-auto d-block" src="/assets/images/ayuda/8.png" alt="ayuda8">
+        <h2 class="text-zona">Registro de información para autenticación</h2>
+        <img class="img-fluid mt-3 mb-3 rounded mx-auto d-block" src="/assets/images/ayuda/9.png" alt="ayuda9">
+        <p class="text-body">
+          Al registrar todos los datos y verificar con éxito el CAPTCHA se ingresa a la aplicación dando click al botón ENTRAR.
+          Si usted no posee una cuenta, por favor realice su registro aquí
+        </p>
+
+        <h2 class="text-zona">3. Es posible consultar los servicios de un miembro de mi familia?</h2>
+        <p class="text-body">Los datos que se muestran en el portal son personales, en caso de requerir consultar la información de un familiar, este se debe registrar en la opción “Registrarme”.</p>
+ 
+        <h2 class="text-zona">4. Cuál es la Política de tratamiento de datos de Fundación Santa Fe de Bogotá?</h2>
+        <p class="text-body">
+          FUNDACIÓN SANTA FE DE BOGOTÁ - PROTECCIÓN DE DATOS PERSONALES LEY 1581 DE 2012
+        La Ley 1581 de 2012 estableció el régimen general de protección de Datos Personales, que tiene por objeto desarrollar el derecho constitucional que tienen todas las personas a conocer, actualizar y rectificar las informaciones que se hayan recogido sobre ellas en bases de datos o archivos, y los demás derechos, libertades y garantías constitucionales relacionados con el derecho a la intimidad.
+        A su vez, el Decreto 1377 de 2013 reglamentó la Ley 1581 de 2012 y reguló la autorización, revocatoria, las políticas y los procedimientos para la protección de datos personales. Con fundamento en las anteriores normas le solicitamos leer detenidamente la siguiente información porque Usted recibe comunicaciones de la Fundación Santa Fe de Bogotá -FSFB- relacionadas con: noticias que consideramos son de su interés, servicios de salud que ofrecemos, educación que brindamos e investigación que realizamos.
+        La FSFB como institución que almacena y recolecta datos personales exclusivamente para enviarle información, requiere obtener su autorización para que de manera libre, previa, expresa, voluntaria, y debidamente informada, le permita a la Institución recolectar, recaudar, almacenar, usar, circular, suprimir, procesar, compilar, intercambiar, actualizar y disponer de los datos que han sido suministrados y que se han incorporado en distintas bases o bancos de datos.
+        Así mismo, con fundamento en el artículo 10 del Decreto 1377 de 2013, la FSFB queda autorizada de manera expresa e inequívoca para mantener y manejar toda su información conforme a lo previsto en el presente documento, salvo que usted le manifieste lo contrario de manera directa, expresa, inequívoca y por escrito dentro de los treinta (30) días hábiles contados a partir de la recepción de la presente comunicación a la cuenta de correo electrónico dispuesta para tal efecto: comunicaciones@fsfb.org.co Adicionalmente, en cualquier momento usted tiene derecho a oponerse al envío de información y puede rectificar o actualizar los datos si son erróneos o han variado. En las futuras comunicaciones que le enviemos por correo electrónico le recordaremos sus derechos a conocer, rectificar o suprimir sus datos o a solicitarnos la revocatoria de su autorización para el tratamiento de los mismos.
+        Esto hace exclusiva referencia a lo señalado arriba y no se relaciona con la información consignada en las historias clínicas, debido a que los datos y la información allí consignada conservan su carácter reservado, confidencial y totalmente privado (Resolución 1995 de 1999)
+        </p>
+        <h2 class="text-zona">5. Con quién me puedo contactar en caso de tener preguntas adicionales?</h2>
+        <p class="text-body">
+          En caso de tener preguntas adicionales podrá contactarnos en el siguiente correo: soporte.portal@fsfb.org.co
+        </p>
+        <h2 class="text-zona"> 6. En cuánto tiempo son publicados los resultados de mis exámenes, después de la toma?</h2>
+        <p class="text-body">Los resultados se visualizan una vez son publicados en la historia clínica de la Fundación Santa Fe de Bogotá.</p>
+        <h2 class="text-zona"> 7. Quién puede visualizar los resultados de mis exámenes?</h2>
+        <p class="text-body">La información que se encuentra publicada en el portal solo puede ser consultada por el paciente y los médicos de la Fundación Santa Fe de Bogotá (Opcional)</p>
+        <h2 class="text-zona"> 8. Cuánto tiempo permanece la información AYUDA relacionada con mi historia clínica publicada?</h2>
+        <p class="text-body">
+          La información publicada no tiene caducidad. En este portal podrá consultar la información de su historia clínica realizada en la Fundación Santa Fe de Bogotá.
+        </p>
+        <h2 class="text-zona"> 9. Puedo modificar la información de mi historia clínica?</h2>
+        <p class="text-body">
+          No, esta información no puede ser editada desde el portal, la información que se encuentra publicada es consultada directamente de la historia clínica digital de la Fundación Santa Fe de Bogotá, la cual es modificada por el personal asistencial.
+        </p>
+
+    </div>
+  </div>
+</div>

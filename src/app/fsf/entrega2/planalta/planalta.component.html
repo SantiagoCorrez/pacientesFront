@@ -1,0 +1,334 @@
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+  <p class="type_18 text-white">Estamos obteniendo su información clínica, por favor espere...</p>
+</ngx-spinner>
+<div class="wrapper">
+  <!-- Page Content  -->
+  <div id="content">
+    <div class="">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="bg-zona pl-3 pr-3 pt-2 pb-2 text-white">
+            <div class="row">
+              <div class="col">
+                <i class="material-icons float-left">assignment_turned_in</i>
+                <span class="float-left mt-1 ml-1">Ver Plan Alta.</span>
+                <div class="clearfix"></div>
+              </div>
+              <!-- <div class="col"><a class="float-right text-white" routerLink="/portal"><u>Ver más</u></a></div> -->
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="card">
+                <div class="card-header" (click)="viewCardPlanAlta()">
+                  <h6 class="text-zona cursor">
+                    <!-- <button class="btn btn-link" type="button" > -->
+                    Ver Plan alta
+                    <!-- </button> -->
+                  </h6>
+                </div>
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample"
+                  *ngIf="activatePlanAlta">
+                  <div class="col-sm-12" *ngIf="msjPlanAlta">
+                    <div class="card">
+                      <div class="card-body">
+                        <h5>No se encontraron datos relacionados a Plan de alta</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div *ngIf="!msjPlanAlta">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+
+                          <div class="container">
+                            <div class="row">
+                              <div class="col-sm-10 col-lg-6">
+                                <ul class="list-group list-group-flush">
+                                  <li class="list-group-item">
+                                    <strong>Actividad física:</strong>
+                                    {{ datos?.actividadFisica }}
+                                  </li>
+                                  <li class="list-group-item">
+                                    <strong>Alertas</strong>
+                                    {{ datos?.alertas }}
+                                  </li>
+                                  <li class="list-group-item">
+                                    <strong>Código de diagnóstico</strong>
+                                    {{ datos?.codDiagnostico }}
+                                  </li>
+                                  <li class="list-group-item">
+                                    <strong>Consultorio</strong>
+                                    {{ datos?.consultorio }}
+                                  </li>
+                                  <li class="list-group-item">
+                                    <strong>Contra Referencia</strong>
+                                    {{ datos?.contraReferencia }}
+                                  </li>
+                                  <li class="list-group-item">
+                                    <strong>Diagnóstico</strong>
+                                    {{ datos?.descDiagnostico }}
+                                  </li>
+                                  <li class="list-group-item">
+                                    <strong>Días de control</strong>
+                                    {{ datos?.diasControl }}
+                                  </li>
+                                  <li class="list-group-item">
+                                    <strong>Dieta</strong>
+                                    {{ datos?.dieta }}
+                                  </li>
+                                  <li class="list-group-item">
+                                    <strong>Dirección profesional</strong>
+                                    {{ datos?.direProfesional }}
+                                  </li>
+                                  <li class="list-group-item">
+                                    <strong>Fecha</strong>
+                                    {{ datos?.fecha }}
+                                  </li>
+                                </ul>
+                              </div>
+                              <div class="col-sm-12 col-lg-6">
+
+                                <ul class="list-group list-group-flush">
+                                  <li class="list-group-item">
+                                    <strong>ind Eps</strong>
+                                    {{ datos?.indEps }}
+                                  </li>
+                                  <li class="list-group-item">
+                                    <strong>Medicina Prepagada</strong>
+                                    {{ datos?.indMedicinaPrepagada }}
+                                  </li>
+                                  <li class="list-group-item">
+                                    <strong>Lista Medicamentos</strong>
+                                    {{ datos?.listaMedicamentos }}
+                                  </li>
+                                  <li class="list-group-item">
+                                    <strong>Lista órdenes</strong>
+                                    {{ datos?.listaOrdenes }}
+                                  </li>
+                                  <li class="list-group-item">
+                                    <strong>Lista Recomendaciones</strong>
+                                    {{ datos?.listaRecomendaciones }}
+                                  </li>
+                                  <li class="list-group-item">
+                                    <strong>Profesional de salud</strong>
+                                    {{ datos?.profesional }}
+                                  </li>
+                                  <li class="list-group-item">
+                                    <strong>Recomendaciones Especiales</strong>
+                                    {{ datos?.recomEspeciales }}
+                                  </li>
+                                  <li class="list-group-item">
+                                    <strong>Registro</strong>
+                                    {{ datos?.registro }}
+                                  </li>
+                                  <li class="list-group-item">
+                                    <strong>tab Encuentro</strong>
+                                    {{ datos?.tabEncuentro }}
+                                  </li>
+                                  <li class="list-group-item">
+                                    <strong>Teléfono profesional</strong>
+                                    {{ datos?.teleProfesional }}
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-12">
+          <div class="bg-zona pl-3 pr-3 pt-2 pb-2 text-white">
+            <div class="row">
+              <div class="col">
+                <i class="material-icons float-left">add_to_photos</i>
+                <span class="float-left mt-1 ml-1">Ver Medicamentos.</span>
+                <div class="clearfix"></div>
+              </div>
+              <!-- <div class="col"><a class="float-right text-white" routerLink="/portal"><u>Ver más</u></a></div> -->
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="card">
+                <div class="card-header" (click)="viewCardMed()">
+                  <h6 class="text-zona cursor">
+                    <!-- <button class="btn btn-link" type="button" > -->
+                      Ver Medicamentos
+                    <!-- </button> -->
+                  </h6>
+                </div>
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample"
+                  *ngIf="activateMedicamentos">
+                  <div class="col-sm-12" *ngIf="msjMed">
+                    <div class="card">
+                      <div class="card-body">
+                        <h5>No se encontraron medicamentos relacionados</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div *ngIf="!msjMed">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+                          <ul class="list-group list-group-flush"
+                            *ngFor="let alta of planAlta">
+                            <li class="list-group-item">
+                              <div class="container">
+                                <div class="row">
+                                  <div class="col-s12 col-md-12 col-lg-12">
+                                    <strong class="text-dark">Código: </strong> {{ alta?.codigo }} <br>
+                                    <strong class="text-dark">Descripción: </strong>{{ alta?.descripcion }}<br>
+                                    <strong class="text-dark">Dosis: </strong>{{ alta?.dosis }}<br>
+                                    <strong class="text-dark">Número de receta: </strong>{{ alta?.numReceta }}
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <div class="bg-zona pl-3 pr-3 pt-2 pb-2 text-white">
+            <div class="row">
+              <div class="col">
+                <i class="material-icons float-left">description</i>
+                <span class="float-left mt-1 ml-1">Ver órdenes de servicio.</span>
+                <div class="clearfix"></div>
+              </div>
+              <!-- <div class="col"><a class="float-right text-white" routerLink="/portal"><u>Ver más</u></a></div> -->
+            </div>
+          </div>
+        </div>
+
+
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="card">
+                <div class="card-header" (click)="viewCardOrd()">
+                  <h6 class="text-zona cursor">
+                    <!-- <button class="btn btn-link" type="button" > -->
+                      Ver órdenes de servicio
+                    <!-- </button> -->
+                  </h6>
+                </div>
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample"
+                  *ngIf="activateOrdenes">
+                  <div class="col-sm-12" *ngIf="msjOren">
+                    <div class="card">
+                      <div class="card-body">
+                        <h5>No se encontraron órdenes de servicio relacionadas</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div *ngIf="!msjOren">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+                          <ul class="list-group list-group-flush" *ngFor="let orden of planOrden">
+                            <li class="list-group-item">
+                              <div class="container">
+                                <div class="row">
+                                  <div class="col-sm-12">
+                                    <strong class="text-dark">Ordern: </strong>{{ orden.cantOrden }}<br>
+                                    <strong class="text-dark">Código: </strong>{{ orden.codPres }}<br>
+                                    <strong class="text-dark">Código Vía: </strong>{{ orden.codVia }}<br>
+                                    <strong class="text-dark">Desc Pres: </strong>{{ orden.descPres }}<br>
+                                    <strong class="text-dark">Lado Cuerpo: </strong>{{ orden.ladoCuerpo }}<br>
+                                    <strong class="text-dark">Número: </strong>{{ orden.numero }}
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <div class="bg-zona pl-3 pr-3 pt-2 pb-2 text-white">
+            <div class="row">
+              <div class="col">
+                <i class="material-icons float-left">done_outline</i>
+                <span class="float-left mt-1 ml-1">Ver Recomendaciones.</span>
+                <div class="clearfix"></div>
+              </div>
+              <!-- <div class="col"><a class="float-right text-white" routerLink="/portal"><u>Ver más</u></a></div> -->
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="card">
+                <div class="card-header" (click)="viewCardReco()">
+                  <h6 class="text-zona cursor">
+                    <!-- <button class="btn btn-link" type="button" > -->
+                      Ver Recomendaciones
+                    <!-- </button> -->
+                  </h6>
+                </div>
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample"
+                  *ngIf="activateRecomendaciones">
+                  <div class="col-sm-12" *ngIf="msjAltaReco">
+                    <div class="card">
+                      <div class="card-body">
+                        <h5>No se encontraron recomendaciones relacionadas</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div *ngIf="!msjAltaReco">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+                          <ul class="list-group list-group-flush"
+                            *ngFor="let recomenda of planRecomendaciones">
+                            <li class="list-group-item">
+                              <div class="container">
+                                <div class="row">
+                                  <div class="col-s12 col-md-12 col-lg-12">
+                                    <strong class="text-dark">Nombre: </strong> {{ recomenda?.nombre }} <br>
+                                    <strong class="text-dark">Indicador: </strong>{{ recomenda?.indicador }}
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

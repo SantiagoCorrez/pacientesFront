@@ -1,0 +1,12 @@
+.idea/centralautofe.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/vcs.xml
+.idea/codeStyles/codeStyleConfig.xml
+.idea/codeStyles/Project.xml
+.idea/inspectionProfiles/Project_Default.xml
+/dist/
+/node_modules/
+.history
+.idea/

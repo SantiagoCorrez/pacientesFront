@@ -1,0 +1,89 @@
+<ngx-spinner
+        bdColor="rgba(51,51,51,0.8)"
+        size="medium"
+        color="#fff"
+        type="ball-scale-multiple">
+      <p class="type_18 text-white">Estamos creando el usuario, por favor espere...</p>
+</ngx-spinner>
+<div class="background_home">
+  <img style="width: 250px; height: auto; margin-bottom: 0 !important" class="m-5" src="/assets/images/logo_light.png" alt="" />
+
+  <div class="row pr-5 pl-5 pt-0 pb-0 mg0">
+    <div class="col-md-6 offset-md-3 col-sm-12 bg-white rounded p-4 type_14">
+      <h1 class="type_18 text-zona"><strong>Restaurar contraseña</strong></h1>
+      <div class="line mt-3 mb-3 ml-0 mr-0"></div>
+      <form>
+        <div class="form-row">
+          <div class="alerts alert-danger" role="alert" *ngIf="msjCambio">
+            {{ msj }}
+          </div>
+          <div class="form-group col-md-12" *ngIf="isNeedOldPass">
+            <label for="OldPassword">Constraseña Actual</label>
+            <div class="input-group mb-3">
+              <input required [type]="typeOldPass" class="form-control" aria-label="Recipient's username"
+                aria-describedby="button-addon2" style="height: 40px" style="height: 40px" id="OldPassword"
+                [(ngModel)]="selectedRecovery.old_password" [ngModelOptions]="{standalone: true}" (focus)="requiere()">
+              <div class="input-group-append">
+                <button class="btn bg-zona text-white" type="button" id="button-addon2" (click)="viewOldPass()">
+                  <i [class]="iconsOld"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label for="Password">Contraseña Nueva</label>
+            <!-- <input type="password" class="form-control form-control-sm type_14" > -->
+            <div class="input-group mb-3">
+              <input required [type]="typePass" class="form-control" aria-label="Recipient's username"
+                aria-describedby="button-addon2" style="height: 40px" style="height: 40px" id="Password"
+                [(ngModel)]="selectedRecovery.password" [ngModelOptions]="{standalone: true}" (focus)="requiere()">
+              <div class="input-group-append">
+                <button class="btn bg-zona text-white" type="button" id="button-addon2" (click)="viewPass()">
+                  <i [class]="icons"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label for="RepeatPassword">Repetir contraseña</label>
+            <!-- <input type="password" class="form-control form-control-sm type_14" > -->
+            <div class="input-group mb-3">
+              <input required [type]="typeRePass" class="form-control" aria-label="Recipient's username"
+                aria-describedby="button-addon2" style="height: 40px" id="RepeatPassword"
+                [(ngModel)]="selectedRecovery.repeat" [ngModelOptions]="{standalone: true}">
+              <div class="input-group-append">
+                <button class="btn bg-zona text-white" type="button" id="button-addon2" (click)="viewRePass()">
+                  <i [class]="iconsRe"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group col-md-12 col-sm-12 mb-2" style="z-index: 1">
+          <button (click)="cambiopassword()" class="btn bg-zona text-white btn-sm type_14 mr-2">Guardar</button>
+          <a routerLink="/historial" *ngIf="isNeedOldPass" class="type_14">
+            <button  class="btn btn-sm btn-outline-zona">
+              Cancelar
+            </button>
+          </a>
+          <a routerLink="/" *ngIf="!isNeedOldPass" class="type_14">
+            <button  class="btn btn-sm btn-outline-zona">
+              Cancelar
+            </button>
+          </a>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-3 col-sm-12"></div>
+  </div>
+  <footer class="blockquote-footer">
+    <div class="col-sm-12 mt-n6 text-white">
+      <a routerLink="/help" class="link" target="_blank">Ayuda</a>
+      <br>
+      <a routerLink="/policies" class="link" target="_blank">Política de tratamiento de datos</a>
+      <br>
+      <a routerLink="/faq" class="link" target="_blank">Preguntas frecuentes</a>
+    </div>
+  </footer>
+</div>

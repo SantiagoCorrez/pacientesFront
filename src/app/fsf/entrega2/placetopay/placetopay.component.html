@@ -1,0 +1,215 @@
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+  <p class="type_18 text-white">Estamos obteniendo su información clínica, por favor espere...</p>
+</ngx-spinner>
+<div class="accordion-margin">
+  <div class="bg-zona pl-3 pr-3 pt-2 pb-2 text-white">
+    <div class="row">
+      <div class="col">
+        <i class="material-icons float-left">assignment_ind</i>
+        <span class="float-left mt-1 ml-1">Información adicional para efectuar el pago</span>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+  <mat-accordion>
+    <mat-expansion-panel [expanded]="openAccordion">
+      <mat-expansion-panel-header>
+        <mat-panel-title class="pay-text">
+          ¿Vas a pagar con la cuenta o tarjeta de alguien más?
+        </mat-panel-title>
+        <mat-panel-description class="pay-text">
+          haz click aquí para ingresar sus datos
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div>
+      </div>
+      <h1 class="text-zona type_14 mt-3">Registro</h1>
+      <div class="outline-div"></div>
+      <!--<mat-accordion >
+        <mat-expansion-panel class="mb-2" [expanded]="colapse" (click)="acciones()">
+          <div class="row pt-3 align-items-center">
+            <div class="col-md-12 text-center">
+              <h3>Datos del pagador</h3>
+                <div class="pay-item">
+                  <p class="pay-item-title"> Numero de documento: </p>
+                  <p class="pay-item-description ml-4">{{ pagadorPrevio?.noDocumento }}</p>
+                </div>
+                <div class="pay-item">
+                  <p class="pay-item-title"> Nombres: : </p>
+                  <p class="pay-item-description ml-4">{{ pagadorPrevio?.nombres }} {{ pagadorPrevio?.apellidos }} </p>
+                </div>
+                &lt;!&ndash; <div class="pay-item">
+                  <p class="pay-item-title"> Prestación: </p>
+                  <p class="pay-item-description ml-4">{{ cita?.indRecepcionado }}</p>
+                </div> &ndash;&gt;
+                <div class="pay-item">
+                  <p class="pay-item-title"> Email: </p>
+                  <p class="pay-item-description ml-4">{{ pagadorPrevio?.email }}</p>
+                </div>
+                <div class="pay-item">
+                  <p class="pay-item-title"> Celular: </p>
+                  <p class="pay-item-description ml-4">{{ pagadorPrevio?.celular }}</p>
+                </div>
+            </div>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>-->
+
+      <form novalidate [formGroup]="datosPagador" #myform="ngForm" (ngSubmit)="onSubmit()" *ngIf="true" >
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="tipodocumento">Tipo de documento*</label>
+            <select (change)="limpiar()" class="form-control form-control-sm type_14" style="height: 40px" id="tipodocumento" formControlName="tipoDocumento" [(ngModel)]="tipoDoc">
+              <!--<option value="2">REGISTRO CIVIL</option>-->
+              <option value="3">TARJETA DE IDENTIDAD</option>
+              <option value="4">CEDULA CIUDADANIA</option>
+              <option value="5">CEDULA EXTRANJERIA</option>
+              <option value="6">NIT</option>
+              <!--<option value="M">MENOR SIN IDENTIFICACION</option>
+              <option value="A">ADULTO SIN IDENTIFICACION</option>
+              <option value="D">CARNÉ DIPLOMÁTICO</option>
+              <option value="S">SALVOCONDUCTO</option>
+              <option value="N">NUIP</option>-->
+              <option value="P">PASAPORTE</option>
+            </select>
+            <div class="alerts alert-danger" role="alert" *ngIf="datosPagador.get('tipoDocumento').hasError('required') && myform.submitted" >
+              Este campo es requerido!
+            </div>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="documento">Documento*</label>
+            <input autocomplete="off" class="form-control form-control-sm type_14" style="height: 40px" id="documento" formControlName="noDocumento" [(ngModel)]="numDoc">
+              <div class="alerts alert-danger" role="alert" *ngIf="datosPagador.get('noDocumento').hasError('required') && myform.submitted" >
+                Este campo es requerido!
+              </div>
+              <div class="alerts alert-danger" role="alert" *ngIf="datosPagador.get('noDocumento').touched &&
+                      datosPagador.hasError('validDoc')">
+                No corresponde a un numero de documento valido
+              </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="Nombre">Nombres*</label>
+            <input type="text" autocomplete="off" class="form-control form-control-sm type_14" style="height: 40px" [(ngModel)]="nombres"
+              id="Nombre" formControlName="nombres">
+              <div class="alerts alert-danger" role="alert" *ngIf="datosPagador.get('nombres').hasError('required')  && myform.submitted" >
+                Este campo es requerido!
+              </div>
+              <div class="alerts alert-danger" role="alert" *ngIf="datosPagador.get('nombres').hasError('pattern')">
+                Caracteres no permitidos
+              </div>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="Apellidos Materno">Apellidos*</label>
+            <input type="text" autocomplete="off" placeholder="" class="form-control form-control-sm type_14" style="height: 40px"
+                   id="Apellidos Materno" formControlName="apellidos" [(ngModel)]="apellidos">
+              <div class="alerts alert-danger" role="alert" *ngIf="datosPagador.get('apellidos').hasError('required')  && myform.submitted" >
+                Este campo es requerido!
+              </div>
+              <div class="alerts alert-danger" role="alert" *ngIf="datosPagador.get('apellidos').hasError('pattern')">
+                Caracteres no permitidos
+              </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="mail">Email*</label>
+            <input type="email" autocomplete="off" class="form-control form-control-sm type_14" style="height: 40px" [(ngModel)]="email"
+              id="mail" placeholder="example@mail.com" formControlName="email">
+              <div class="alerts alert-danger" role="alert" *ngIf="datosPagador.get('email').hasError('required')  && myform.submitted" >
+                Este campo es requerido!
+              </div>
+              <div class="alerts alert-danger" role="alert" *ngIf="datosPagador.get('email').hasError('pattern') && myform.submitted" >
+                No es un correo valido!
+              </div>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="Celular">Teléfono</label>
+            <input type="text" autocomplete="off" class="form-control form-control-sm type_14" style="height: 40px"
+                   id="Celular" placeholder="3219876543" formControlName="celular" [(ngModel)]="celular">
+            <div class="alerts alert-danger" role="alert" *ngIf="datosPagador.get('celular').hasError('required') && myform.submitted" >
+              Este campo es requerido!
+            </div>
+            <div class="alerts alert-danger" role="alert" *ngIf="datosPagador.get('celular').hasError('pattern')">
+              No puede iniciar en 0 y no puede contener caracteres especiales
+            </div>
+            <div class="alerts alert-danger" role="alert" *ngIf="datosPagador.get('celular').errors?.maxlength">
+              Longitud máxima excedida
+            </div>
+            <div class="alerts alert-danger" role="alert" *ngIf="datosPagador.get('celular').errors?.minlength  && myform.submitted">
+              Longitud mínima para el campo es de 7 caracteres
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-12 col-sm-12 mb-2" style="z-index: 1">
+            <button type="submit" class="btn bg-zona text-white btn-sm type_14 mr-2">Guardar</button>
+            <a (click)="reset()" class="btn btn-sm btn-outline-zona type_14">Limpiar</a>
+          </div>
+        </div>
+      </form>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+<!-- Second Accordion -->
+<div> 
+  <div class="bg-zona pl-3 pr-3 pt-2 pb-2 text-white">
+    <div class="row">
+      <div class="col">
+        <i class="material-icons float-left">assignment_ind</i>
+        <span class="float-left mt-1 ml-1">Su proceso de pago expirará en 12 horas</span>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+  <mat-accordion>
+    <mat-expansion-panel [expanded]="true">
+      <div class="row pt-3 align-items-center">
+        <div class="col-md-6" *ngFor="let cita of citas">
+            <!-- <div class="pay-item">
+              <p class="pay-item-title">Nombre: </p>
+              <p class="pay-item-description ml-4">{{ cita?.nombreCompleto }}</p>
+            </div> -->
+            <div class="pay-item">
+              <p class="pay-item-title">Tipo cita: </p>
+              <p class="pay-item-description ml-4">{{ cita?.descripcion }}</p>
+            </div>
+            <div class="pay-item">
+              <p class="pay-item-title">Referencia: </p>
+              <p class="pay-item-description ml-4">{{ cita?.idCita }}</p>
+            </div>
+            <!-- <div class="pay-item">
+              <p class="pay-item-title">Documento: </p>
+              <p class="pay-item-description ml-4">{{ cita?.tipoDocumento }} {{ cita?.documento }} </p>
+            </div> -->
+            <div class="pay-item">
+              <p class="pay-item-title">Fecha y hora de la cita: </p>
+              <p class="pay-item-description ml-4">{{ cita?.fechaCitaCa }}</p>
+            </div>
+            
+        </div>
+        <div class="col-md-4 align-self-start">
+          <div class="pay-label">
+            <p class="pay-label-title">TOTAL A PAGAR</p>
+            <p class="pay-label-value type_18">{{ valor | currency:'COP ' }}</p>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="row justify-content-center mt-2">
+        <div class="col-md-6 pay-save">
+          <input type="checkbox">
+          <p class="type_12 pay-save-description">¿Quieres que guardemos este medio de pago para que no tengas que ingresarlo nuevamente?</p>
+        </div>
+      </div> -->
+      <div class="row justify-content-center">
+        <div class="col-md-4 mt-4 pay-cta-container">
+            <button (click)="generarPago()" class="btn bg-zona text-white btn-lg type_14 mb-2 ">CONTINUAR</button>
+            <a routerLink="/historial">
+              <p class="type_12 pay-save-description">No deseo continuar el proceso</p>
+            </a>
+        </div>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

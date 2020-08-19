@@ -1,0 +1,40 @@
+<div class="bg-zona pl-3 pr-3 pt-2 pb-2 text-white">
+  <div class="row">
+    <div class="col-sm-6">
+      <i class="material-icons type_14 float-left mr-2">add_photo_alternate</i>
+      <h5>Cargue de documento</h5>
+    </div>
+    <div class="col-sm-1 offset-sm-5">
+      <mat-icon class="cursor-hand" (click)="close()">close</mat-icon>
+    </div>
+  </div>
+</div>
+<div class="col-sm-12 bg-white">
+  <br>
+  <p>Por favor subir o renovar órden médica</p>
+  <input type="file" style="display: none" #caFile id="caFile" (change)="handleInputChange($event);">
+  <div class="col-sm-6" *ngIf="!showFile">
+    <label for="caFile" class="text-success cursor-hand"><b>AGREGAR DOCUMENTO <mat-icon>add</mat-icon></b></label>
+  </div>
+  <mat-card class="pl-3 pr-3 bg-light" *ngIf="showFile">
+    <div class="row">
+      <div class="col-sm-10">
+        <p><span> {{ ordenMedica.ormFilename }}</span></p>
+      </div>
+      <div class="col-sm-2">
+        <button mat-icon-button [matMenuTriggerFor]="menuOrden">
+          <mat-icon>more_horiz</mat-icon>
+        </button>
+        <mat-menu #menuOrden="matMenu">
+          <button mat-menu-item (click)="download()">
+            <span>Consultar</span>
+          </button>
+          <button mat-menu-item (click)="caFile.click()">
+            <span>Renovar</span>
+          </button>
+        </mat-menu>
+      </div>
+    </div>
+  </mat-card>
+  <br>
+</div>

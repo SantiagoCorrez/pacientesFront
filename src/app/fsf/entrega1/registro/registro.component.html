@@ -1,0 +1,238 @@
+<ngx-spinner
+        bdColor="rgba(51,51,51,0.8)"
+        size="medium"
+        color="#fff"
+        type="ball-scale-multiple">
+      <p class="type_18 text-white">Estamos creando el usuario, por favor espere...</p>
+</ngx-spinner>
+<div class="background_home"></div>
+  <div class="row" style="margin-right: 0">
+    <img style="width: 250px; height: auto; z-index: 1;" class="m-5 mg-b1" src="/assets/images/logo_light.png" alt="" />  
+  </div>
+  <div class="row pr-5 pl-5 pt-0 pb-0 mg0">
+    <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 col-sm-12 bg-white rounded p-4 type_14 mb-20 mb-20">
+      <h1 class="type_18 text-zona"><strong>Registro</strong></h1>
+      <div class="line mt-3 mb-3 ml-0 mr-0"></div>
+      <div class="alerts alert-danger" *ngIf="msj">
+        El usuario ya se encuentra registrado, por favor valide los datos ingresados
+      </div>
+      <form>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="tipodocumento">Tipo de documento*</label>
+            <select required class="form-control form-control-sm type_14" style="height: 40px" id="tipodocumento"
+              [(ngModel)]="selectedRegistro.tipodocumento" [ngModelOptions]="{standalone: true}" >
+              <option value="2">REGISTRO CIVIL</option>
+              <option value="3">TARJETA DE IDENTIDAD</option>
+              <option value="4">CEDULA CIUDADANIA</option>
+              <option value="5">CEDULA EXTRANJERIA</option>
+              <option value="6">NIT</option>
+              <option value="M">MENOR SIN IDENTIFICACION</option>
+              <option value="A">ADULTO SIN IDENTIFICACION</option>
+              <option value="D">CARNÉ DIPLOMÁTICO</option>
+              <option value="S">SALVOCONDUCTO</option>
+              <option value="N">NUIP</option>
+              <option value="P">PASAPORTE</option>
+            </select>
+            <!--<p class="center">{{selectedRegistro.fechayear}} - {{selectedRegistro.fechames}} - {{selectedRegistro.dechadia}}</p>-->
+            <div class="alerts alert-danger" role="alert" *ngIf="validacion7">
+              Seleccione tipo de documento correspondiente.
+            </div>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="documento">Documento*</label>
+            <input type="text" autocomplete="off" class="form-control form-control-sm type_14" style="height: 40px" required
+              id="documento" [(ngModel)]="selectedRegistro.documento" [ngModelOptions]="{standalone: true}"
+              required  min="4" (change)="validateDoc()" >
+            <div class="alerts alert-danger" role="alert" *ngIf="validacion8">
+              {{ msjDoc }}
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label for="Nombre">Nombres*</label>
+            <input type="text" autocomplete="off" class="form-control form-control-sm type_14" style="height: 40px" id="Nombre"
+              [(ngModel)]="selectedRegistro.nombre" [ngModelOptions]="{standalone: true}" pattern="[A-Za-z]" required >
+            <div class="alerts alert-danger" role="alert" *ngIf="validacion1">
+              Nombre es un campo obligatorio!
+            </div>
+          </div>
+
+          <div class="form-group col-md-6">
+              <label for="Apellidos">Apellido Paterno*</label>
+              <input type="text" autocomplete="off" placeholder="Apellido paterno" class="form-control form-control-sm type_14" style="height: 40px"
+                id="Apellidos" [(ngModel)]="selectedRegistro.apellidoPaterno" [ngModelOptions]="{standalone: true}" 
+                required >
+              <div class="alerts alert-danger" role="alert" *ngIf="validacion1">
+                El apellido paterno es un campo obligatorio!
+              </div>
+            </div>
+
+          <div class="form-group col-md-6">
+            <label for="Apellidos Materno">Apellido Materno</label>
+            <input type="text" autocomplete="off" placeholder="Apellido materno" class="form-control form-control-sm type_14" style="height: 40px"
+              id="Apellidos Materno" [(ngModel)]="selectedRegistro.apellidoMaterno" [ngModelOptions]="{standalone: true}">
+          </div>
+
+          <div class="from-group col-sm-12">
+            <div class="alerts alert-danger" role="alert" *ngIf="validacionLetras">
+              Los Nombre y los apellidos solo pueden contener letras!
+            </div>
+          </div>
+
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="Sexo">Genero*</label><br>
+            <div class="custom-control custom-radio custom-control-inline">
+              <input type="radio" value="M" id="Masculino" name="genero" class="custom-control-input" [(ngModel)]="selectedRegistro.genero"
+                [ngModelOptions]="{standalone: true}" required >
+              <label class="custom-control-label mt-1" for="Masculino">Masculino</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+              <input type="radio" value="F" id="Femenino" name="genero" class="custom-control-input"
+                [(ngModel)]="selectedRegistro.genero"
+                [ngModelOptions]="{standalone: true}" required >
+              <label class="custom-control-label mt-1" for="Femenino">Femenino</label>
+            </div>
+            <div class="alerts alert-danger" role="alert" *ngIf="validacion9">
+              El genero es un campo obligatorio!
+            </div>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="nacimiento">Fecha Nacimiento*</label>
+            <div class="input-group">
+              <input autocomplete="off" class="form-control form-control-sm type_14" style="height: 40px" id="nacimiento"
+                ngx-mydatepicker name="date" [(ngModel)]="selectedRegistro.date" [ngModelOptions]="{standalone: true}"
+                required  [options]="myOptions" #dp="ngx-mydatepicker" step="1" min="1920-01-01"
+                max="{{ fechaMax }}" (keypress)="dp.toggleCalendar()" (focus)="dp.toggleCalendar()"
+                placeholder="aaaa-mm-dd" (keypress)="cambiar($event)"/>
+            </div>
+            <div class="alerts alert-danger" role="alert" *ngIf="validacion10">
+              {{ msjDate }}
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="mail">Email*</label>
+            <input type="email" autocomplete="off" class="form-control form-control-sm type_14" style="height: 40px" id="mail"
+              placeholder="example@mail.com" [(ngModel)]="selectedRegistro.email" [ngModelOptions]="{standalone: true}"
+              required  (keypress)="validDateMouse()" (click)="validDateMouse()"
+              (keypress)="validDate($event)" #mail>
+            <div class="alerts alert-danger" role="alert" *ngIf="validacion3">
+              El correo no es valido!
+            </div>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="Celular">Celular</label>
+            <input type="text" autocomplete="off" class="form-control form-control-sm type_14" style="height: 40px" id="Celular"
+              placeholder="3219876543" [(ngModel)]="selectedRegistro.celular" [ngModelOptions]="{standalone: true}"
+              min="7" max="10" minlength="7" (keydown)="validPass($event)">
+            <div class="alerts alert-danger" role="alert" *ngIf="validacion4">
+              {{ msjPhone }}
+            </div>
+            <div class="alerts alert-danger" role="alert" *ngIf="noesnumero">
+              Por favor ingrese solo numeros.
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <!-- <div class="form-group col-md-6">
+            <label for="password">Contraseña*</label>
+            <input type="password" class="form-control form-control-sm type_14" style="height: 40px" id="password"
+              [(ngModel)]="selectedRegistro.password" [ngModelOptions]="{standalone: true}" required 
+              data-toggle="tooltip" (click)="validPass($event)" #password data-placement="top" title="Recuerda!
+              Para crear tu contraseña ten en cuenta:
+              mínimo 8, máximo 15 caracteres,
+              al menos una letra mayúscula, una minúscula,
+              un número y un caracter especial,
+              sin espacios en blanco."
+              (click)="requiere()" (keypress)="validatePhone()">
+              <div class="input-group-append">
+                <button class="btn bg-zona text-white" type="button" id="button-addon2" (click)="viewPass()">
+                  <i [class]="icons"></i>
+                </button>
+              </div>
+            <div class="alerts alert-danger" role="alert" *ngIf="validacion5">
+              La contraseña es un campo obligatorio!
+            </div>
+          </div> -->
+
+          <div class="form-group col-md-6">
+            <label for="Contraseña">Contraseña*</label>
+            <div class="input-group mb-3">
+              <input required autocomplete="off" [type]="typePass" class="form-control" aria-label="Recipient's username" aria-describedby="button-addon2" style="height: 40px" id="Contraseña" data-toggle="tooltip"
+              (click)="validPass($event)" [(ngModel)]="selectedRegistro.password" [ngModelOptions]="{standalone: true}" 
+              #password data-placement="top" title="Recuerda!
+              Para crear tu contraseña ten en cuenta:
+              mínimo 8, máximo 15 caracteres,
+              al menos una letra mayúscula, una minúscula,
+              un número y un caracter especial,
+              sin espacios en blanco."
+              (click)="requiere()" (keypress)="validatePhone()">
+            <div class="input-group-append">
+              <button class="btn bg-zona text-white" type="button" id="button-addon2" (click)="viewPass()">
+                <i [class]="icons"></i>
+              </button>
+            </div>
+            </div>
+            <div class="alerts alert-danger" role="alert" *ngIf="validacion5">
+              La contraseña es un campo obligatorio!
+            </div>
+          </div>
+<!-- 
+          <div class="form-group col-md-6">
+            <label for="password2">Vuelva a ingresar su contraseña*</label>
+            <input type="password" class="form-control form-control-sm type_14" style="height: 40px" id="password2"
+              [(ngModel)]="selectedRegistro.repassword" [ngModelOptions]="{standalone: true}" required  >
+            <div class="alerts alert-danger" role="alert" *ngIf="validacion6">
+              La confirmación de la contraseña es un campo obligatorio!
+            </div>
+          </div> -->
+          <div class="form-group col-md-6">
+            <label for="password2">Repetir contraseña*</label>
+            <div class="input-group mb-3">
+              <input required autocomplete="off" [type]="typeRePass" class="form-control" aria-label="Recipient's username" aria-describedby="button-addon2" style="height: 40px" id="password2"
+              [(ngModel)]="selectedRegistro.repassword" [ngModelOptions]="{standalone: true}"
+              data-placement="top" title="Recuerda!
+                Para crear tu contraseña ten en cuenta:
+                mínimo 8, máximo 15 caracteres,
+                al menos una letra mayúscula, una minúscula,
+                un número y un caracter especial,
+                sin espacios en blanco.">
+            <div class="input-group-append">
+              <button class="btn bg-zona text-white" type="button" id="button-addon2" (click)="viewRePass()">
+                <i [class]="iconsRe"></i>
+              </button>
+            </div>
+            </div>
+            
+            <div class="alerts alert-danger" role="alert" *ngIf="validacion3">
+              Contraseña es un campo obligatorio!
+            </div>
+          </div>
+          <div class="form-group col-md-12 col-sm-12 mb-2" style="z-index: 1">
+              <button (click)="registro()" *ngIf="guardar" class="btn bg-zona text-white btn-sm type_14 mr-2">Guardar</button>
+              <button (click)="cancelar()" class="btn btn-sm btn-outline-zona type_14">Cancelar</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-3 col-sm-12"></div>
+  </div>
+  <footer class="blockquote-footer">
+    <div class="col-sm-12 mt-n6 text-white">
+      <a routerLink="/help" class="link" target="_blank">Ayuda</a>
+      <br>
+      <a routerLink="/policies" class="link" target="_blank">Política de tratamiento de datos</a>
+      <br>
+      <a routerLink="/faq" class="link" target="_blank">Preguntas frecuentes</a>
+    </div>
+    <div>
+      <a href="https://www.placetopay.com/web/" target="_blank">
+        <img src="https://static.placetopay.com/placetopay-logo.svg">
+      </a>
+    </div>
+  </footer>

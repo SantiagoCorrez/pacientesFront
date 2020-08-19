@@ -1,0 +1,85 @@
+/*
+    DEMO STYLE
+*/
+
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: #fafafa;
+}
+
+p {
+
+    color: #999;
+}
+
+.type_18 { font-size: 18px}
+.type_16 { font-size: 16px}
+.type_14 { font-size: 14px}
+.type_12 { font-size: 12px}
+
+.type_20 { font-size: 20px}
+.type_30 { font-size: 30px}
+.type_32 { font-size: 3.0rem}
+
+.outline-div {
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+    margin: 15px 0 20px 0;
+}
+
+.pay-text {
+    color: #001698;
+    font-size: 12px;
+}
+
+.accordion-margin {
+    margin-bottom: 2%;
+}
+
+.pay-item {
+    display: flex;
+    background-color: white;
+}
+
+.pay-item-title {
+    color: black;
+    font-weight: 700;
+}
+
+.pay-label {
+    background-color: #001698;
+    padding: 4%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pay-label-value {
+    font-weight: 700;
+}
+
+.pay-label-value,
+.pay-label-title {
+    color: white;
+}
+
+.pay-save {
+    display: flex;
+    align-items: center;
+}
+
+.pay-save-description {
+    margin: 0 0 0 10px;
+    padding: 0;
+}
+
+.pay-cta-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (min-width: 576px) { 
+    
+}

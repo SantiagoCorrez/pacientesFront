@@ -1,0 +1,103 @@
+<div class="wrapper bg-light">
+    <!-- Sidebar  -->
+    <nav id="sidebar" class=" type_12">
+      <div class="sidebar-header">
+        <img class="img-fluid mr-0" src="/assets/images/logo.png" alt="" />
+      </div>
+      <ul class="list-unstyled components">
+        <li>
+          <a routerLink="/historial">Historial Clínico</a>
+        </li>
+        <li>
+          <a routerLink="/citas">Citas agendadas</a>
+        </li>
+        <li>
+          <a routerLink="/examenes">Resultados de exámenes</a>
+        </li>
+        <li class="active">
+          <a routerLink="/mispagos">Mis pagos</a>
+        </li>
+        <li>
+          <a routerLink="/historialpagos">Historial de transacciones</a>
+        </li>
+        <div>
+          <a href="https://www.placetopay.com/web/" target="_blank">
+            <img src="https://static.placetopay.com/placetopay-logo.svg">
+          </a>
+        </div>
+      </ul>
+      <div class="col-sm-12 text-dark info blockquote-footer-login">
+        <a routerLink="/help" class="link type_14" target="_blank">Ayuda</a>
+        <br>
+        <a routerLink="/policies" class="link type_14" target="_blank">Política de tratamiento de datos</a>
+        <br>
+        <a routerLink="/faq" class="link type_14" target="_blank">Preguntas frecuentes</a>
+      </div>
+    </nav>
+    <!-- Page Content  -->
+    <div id="content">
+      <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+        <div class="container-fluid">
+          <button type="button" id="sidebarCollapse" class="btn bg-transparent">
+            <i class="material-icons">list</i>
+          </button>
+          <img class="img-fluid img-side-hide mr-0" src="/assets/images/logo.png" alt="" />
+          <button class="btn d-inline-block d-lg-none ml-auto bg-transparent" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="material-icons">account_circle</i>
+          </button>
+          <div class="" id="navbarSupportedContent">
+            <ul class="nav navbar-nav ml-auto">
+              <li class="nav-item active text-right">
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-lg-12 ml-7">
+                    <a class="nav-link m-0 p-0 type_18" >{{ fullname }}<br></a>
+                    <button class="btn bg-zona text-white btn-sm type_14 mb-1" (click)="logout()">Cerrar sesión</button><br>
+                    <app-changepass></app-changepass>
+                  </div>
+                  <!-- <div class="col-md-3 col-sm-1 col-lg-2	  d-sm-none d-md-none d-lg-block"> -->
+                    <!--<img src="/assets/images/profile.png" style="max-width: 50px" class="img-fluid" alt="" />-->
+                  <!-- </div> -->
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="col-12 type_12">
+        <div class="row">
+          <div class="col mb-3">
+  
+            <div class="col-12  border-bottom">
+              <div class="row bg-white">
+                <!--<div class="col-md-2 col-sm-4 p-3 text-center">
+                  <img style="width: 100px; min-width: 60px" src="/assets/images/profile.png" class="img-fluid" alt="" />
+                </div>-->
+                <div class="col-md-10 col-sm-8 type_14 p-3 ">
+                  <h5>Mis pagos<br></h5>
+                  <p>Realice el pago de sus citas en linea, revise el historial de sus pagos.</p>
+                  <!-- <button type="button" class="btn btn-primary btn-sm type_16 mb_2 font-weight-bold">Solicitar cita</button> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 type_14">
+        <app-mispagos></app-mispagos>
+      </div>
+      <!--<div class="col-12 type_14">
+        <div class="row">
+          <div class="col-md-6 col-sm-12 mb-3">
+            <app-resultadosexamenes></app-resultadosexamenes>
+          </div>
+          <div class="col-md-6 col-sm-12 mb-3">
+            <app-procedimientos></app-procedimientos>
+          </div>
+        </div>
+      </div>-->
+      <!--<div class="col-12 type_14">
+        <app-noticias></app-noticias>
+      </div>-->
+    </div>
+  </div>

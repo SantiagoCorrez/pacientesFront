@@ -1,0 +1,50 @@
+<div class="col-12 type_12">
+    <div class="row">
+      <div class="col mb-3">
+        <div class="col-12  border-bottom">
+          <div class="row bg-white">
+            <!--<div class="col-md-2 col-sm-4 p-3 text-center">
+              <img style="width: 100px; min-width: 60px" src="/assets/images/profile.png" class="img-fluid" alt="" />
+            </div>-->
+            <div class="col-md-12 col-sm-12 type_12">
+  
+              <div class="row">
+                <div class="col-sm-12 col-lg-6">
+  
+                  <ul class="list-group list-group-flush  type_14">
+                    <li class="list-group-item"><strong>Historia clínica</strong>
+                      <p>{{ dataPac?.objeto.numHistoriaClinica }}</p>
+                    </li>
+                    <li class="list-group-item"><strong>Nombres</strong>
+                      <p>{{ dataPac?.objeto.nombres }} {{ dataPac?.objeto.primerApellido }} {{
+                        dataPac?.objeto.segundoApellido }}</p>
+                    </li>
+                    <li class="list-group-item"><strong>Fecha de nacimiento</strong>
+                      <p>{{ dataPac?.objeto.fechaNacimiento }}</p>
+                    </li>
+                    <li class="list-group-item"><strong>Correo electrónico</strong>
+                      <p>{{ const_Session?.mail }}</p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-sm-12 col-lg-6">
+  
+                  <ul class="list-group list-group-flush type_14">
+                    <li class="list-group-item"><strong>Identificación</strong>
+                      <p>{{ dataPac?.objeto.descTipoDocId }} - {{ dataPac?.objeto.numDocId }}</p>
+                    </li>
+                    <li class="list-group-item"><strong>Género</strong>
+                      <p>{{ dataPac?.objeto.sexo }}</p>
+                    </li>
+                    <li class="list-group-item"><strong>Edad actual</strong>
+                      <p>{{ dataPac?.objeto.edadActual }}</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

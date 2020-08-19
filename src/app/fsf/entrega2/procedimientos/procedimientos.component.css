@@ -1,0 +1,50 @@
+.cursor{
+    cursor: pointer;
+}
+.cursor:hover{
+  color: grey !important;
+  text-decoration: underline;
+}
+.vermas:hover{
+  font-size: 1rem;
+}
+.w-table{
+    width: 851px;
+}
+.list-group-item{
+  padding: .75rem 0;
+}
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .w-table{
+        width: 600px;
+    }
+}
+  
+  
+  /* 
+    ##Device = Low Resolution Tablets, Mobiles (Landscape)
+    ##Screen = B/w 481px to 767px
+  */
+  
+@media (min-width: 481px) and (max-width: 767px) {
+    .w-table{
+        width: 510px;
+    }
+}
+  
+  /* 
+    ##Device = Most of the Smartphones Mobiles (Portrait)
+    ##Screen = B/w 320px to 479px
+  */
+  
+@media (min-width: 320px) and (max-width: 480px) {
+    .w-table{
+        width: 240px;
+    }
+}
