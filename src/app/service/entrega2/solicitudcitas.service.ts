@@ -30,7 +30,7 @@ export class SolicitudcitasService {
   }
 
   getCitasPorPagar(data) {
-    return this.http.post<ReponseCitas[]>(environment.endpointCA + '/CentralAutoriza/rest/Citas/CCitasParaPagar',
+    return this.http.post<ReponseCitas[]>(environment.endpointCA + '/CentralAutorizav2/rest/Citas/CCitasParaPagar',
     data , { headers: this.headers });
   }
 

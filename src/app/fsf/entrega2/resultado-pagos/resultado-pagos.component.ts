@@ -7,6 +7,7 @@ import {Idle, DEFAULT_INTERRUPTSOURCES} from '@ng-idle/core';
 import {Keepalive} from '@ng-idle/keepalive';
 import { LoginService } from 'src/app/service/entrega1/login.service';
 import * as $ from 'jquery';
+import swal from 'sweetalert';
 
 @Component({
   selector: 'app-resultado-pagos',

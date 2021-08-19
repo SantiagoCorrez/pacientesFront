@@ -106,7 +106,7 @@ export class LoginComponent implements OnInit {
       if (!this.validacion1 && !this.validacion2 && !this.validacion3) {
         this.loginArray.push(this.selectedLogin);
         this.loginService.getLogin(this.loginArray).subscribe(
-          data => {
+          (data:any) => {
             if (data.userValido === true) {
               let u: Auth = { login: 'true' };
               this.authLogin.setUserLoggetIn(u);

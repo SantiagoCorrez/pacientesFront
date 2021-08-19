@@ -12,13 +12,18 @@ export class LoginService {
   private cookie: CookieService) {
   }
   params;
-
+  headers = new HttpHeaders({
+    'Content-Type': 'application/json'
+  });
   getLogin(userData) {
     this.params = {
       'uid': userData[0].tipodocumento + userData[0].documento,
       'password': userData[0].password
     };
-    return this.http.post<any>( environment.endpoint + '/SrvZonaPrivada/rest/Service/auth', this.params);
+    let newh=new HttpHeaders({
+      'Content-Type': 'text/plain'
+    });
+    return this.http.post( environment.endpoint + '/SrvZonaPrivada/rest/Service/auth', btoa(JSON.stringify(this.params)),{headers:newh,responseType: 'json'});
   }
 
   logout() {

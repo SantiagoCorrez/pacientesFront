@@ -7,7 +7,7 @@ export class TranslatePipe implements PipeTransform {
   transform(value: any) {
     let translate;
     if('REJECTED' === value){
-      translate = 'Sin transacción';
+      translate = 'Rechazada';
     } else if ('APPROVED' === value) {
       translate = 'Aprobada';
     } else if ('CREATED' === value) {

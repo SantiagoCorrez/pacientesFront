@@ -22,7 +22,7 @@ export class ListaPagosService {
     this.params = {
         'noPacPaciente': this.const_Session.pacnumero
     };
-    return this.http.post<any>(environment.endpointCA + '/CentralAutoriza/rest/PagosService/listaPagos',
+    return this.http.post<any>(environment.endpointCA + '/CentralAutorizav2/rest/PagosService/listaPagos',
       this.params, { headers: this.headers });
   }
 }

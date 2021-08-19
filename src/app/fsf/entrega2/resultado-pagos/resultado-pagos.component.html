@@ -1,142 +1,144 @@
 <ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
-  <p class="type_18 text-white">Estamos obteniendo su información clínica, por favor espere...</p>
+    <p class="type_18 text-white">Estamos obteniendo su información clínica, por favor espere...</p>
 </ngx-spinner>
 <div class="wrapper bg-light">
-  <!-- Sidebar  -->
-  <nav id="sidebar" class=" type_12">
-    <div class="sidebar-header">
-      <img class="img-fluid mr-0" src="/assets/images/logo.png" alt="" />
-    </div>
-    <ul class="list-unstyled components">
-      <li>
-        <a routerLink="/historial">Historial Clínico</a>
-      </li>
-      <li>
-        <a routerLink="/citas">Citas agendadas</a>
-      </li>
-      <li>
-        <a routerLink="/examenes">Resultados de exámenes</a>
-      </li>
-      <li>
-        <a routerLink="/mispagos">Mis pagos</a>
-      </li>
-      <li>
-        <a routerLink="/historialpagos">Historial de transacciones</a>
-      </li>
-    </ul>
-    <div class="col-sm-12 text-dark info blockquote-footer-login">
-      <a routerLink="/help" class="link type_14" target="_blank">Ayuda</a>
-      <br>
-      <a routerLink="/policies" class="link type_14" target="_blank">Política de tratamiento de datos</a>
-      <br>
-      <a routerLink="/faq" class="link type_14" target="_blank">Preguntas frecuentes</a>
-    </div>
-  </nav>
-  <!-- Page Content  -->
-  <div id="content">
-    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
-      <div class="container-fluid">
-        <button type="button" id="sidebarCollapse" class="btn bg-transparent">
+    <!-- Sidebar  -->
+    <nav id="sidebar" class=" type_12">
+        <div class="sidebar-header">
+            <img class="img-fluid mr-0" src="/assets/images/logo.png" alt="" />
+        </div>
+        <ul class="list-unstyled components">
+            <li>
+                <a routerLink="/historial">Historial Clínico</a>
+            </li>
+            <li>
+                <a routerLink="/citas">Citas agendadas</a>
+            </li>
+            <li>
+                <a routerLink="/examenes">Resultados de exámenes</a>
+            </li>
+            <li>
+                <a routerLink="/mispagos">Mis pagos</a>
+            </li>
+            <li>
+                <a routerLink="/historialpagos">Historial de transacciones</a>
+            </li>
+            <li style="background-color: #1a3e9c;color:#fff">
+                <a href="http://www.fsfbcitas.co/" target="_blank">Agenda tu cita</a>
+            </li>
+        </ul>
+        <div class="col-sm-12 text-dark info blockquote-footer-login">
+            <a routerLink="/help" class="link type_14" target="_blank">Ayuda</a>
+            <br>
+            <a href="https://www.fsfb.org.co/wps/portal/fsfb/inicio/acercadefsfb/fsfb-web/sectionItem/habeas-data" class="link type_14" target="_blank">Política de tratamiento de datos</a>
+            <br>
+            <a routerLink="/faq" class="link type_14" target="_blank">Preguntas frecuentes</a>
+        </div>
+    </nav>
+    <!-- Page Content  -->
+    <div id="content">
+        <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+            <div class="container-fluid">
+                <button type="button" id="sidebarCollapse" class="btn bg-transparent">
           <i class="material-icons">list</i>
         </button>
-        <img class="img-fluid img-side-hide mr-0" src="/assets/images/logo.png" alt="" />
-        <button class="btn d-inline-block d-lg-none ml-auto bg-transparent" type="button" data-toggle="collapse"
-          data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <img class="img-fluid img-side-hide mr-0" src="/assets/images/logo.png" alt="" />
+                <button class="btn d-inline-block d-lg-none ml-auto bg-transparent" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <i class="material-icons">account_circle</i>
         </button>
-        <div class="" id="navbarSupportedContent">
-          <ul class="nav navbar-nav ml-auto">
-            <li class="nav-item active text-right">
-              <div class="row">
-                <div class="col-md-12 col-sm-12 col-lg-12 ml-7">
-                  <a class="nav-link m-0 p-0 type_18" >{{ fullname }}<br></a>
-                  <button class="btn bg-zona text-white btn-sm type_14 mb-1" (click)="logout()">Cerrar sesión</button><br>
-                  <app-changepass></app-changepass>
+                <div class="" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item active text-right">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 col-lg-12 ml-7">
+                                    <a class="nav-link m-0 p-0 type_18">{{ fullname }}<br></a>
+                                    <button class="btn bg-zona text-white btn-sm type_14 mb-1" (click)="logout()">Cerrar sesión</button><br>
+                                    <app-changepass></app-changepass>
+                                </div>
+                                <!-- <div class="col-md-3 col-sm-1 col-lg-2	  d-sm-none d-md-none d-lg-block"> -->
+                                <!--<img src="/assets/images/profile.png" style="max-width: 50px" class="img-fluid" alt="" />-->
+                                <!-- </div> -->
+                            </div>
+                        </li>
+                    </ul>
                 </div>
-                <!-- <div class="col-md-3 col-sm-1 col-lg-2	  d-sm-none d-md-none d-lg-block"> -->
-                  <!--<img src="/assets/images/profile.png" style="max-width: 50px" class="img-fluid" alt="" />-->
-                <!-- </div> -->
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <div class="col-12 type_12">
-      <div class="row">
-        <div class="col mb-3">
+            </div>
+        </nav>
+        <div class="col-12 type_12">
+            <div class="row">
+                <div class="col mb-3">
 
-          <div class="col-12  border-bottom">
-            <div class="row bg-white">
-              <!--<div class="col-md-2 col-sm-4 p-3 text-center">
+                    <div class="col-12  border-bottom">
+                        <div class="row bg-white">
+                            <!--<div class="col-md-2 col-sm-4 p-3 text-center">
                 <img style="width: 100px; min-width: 60px" src="/assets/images/profile.png" class="img-fluid" alt="" />
               </div>-->
-              <div class="col-md-10 col-sm-8 type_14 p-3 ">
-                <h5>Resultado de pagos <br></h5>
-                <!-- <p>Historial de citas a las cuales ya asistió o se encuentran programas</p> -->
-                <!-- <button type="button" class="btn btn-primary btn-sm type_16 mb_2 font-weight-bold">Solicitar cita</button> -->
-              </div>
+                            <div class="col-md-10 col-sm-8 type_14 p-3 ">
+                                <h5>Resultado de pagos <br></h5>
+                                <!-- <p>Historial de citas a las cuales ya asistió o se encuentran programas</p> -->
+                                <!-- <button type="button" class="btn btn-primary btn-sm type_16 mb_2 font-weight-bold">Solicitar cita</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-    <div class="col-12 type_14">
-        
+        <div class="col-12 type_14">
 
-      <div> 
-        <div class="bg-zona pl-3 pr-3 pt-2 pb-2 text-white">
-          <div class="row">
-            <div class="col">
-              <i class="material-icons float-left">assignment_ind</i>
-              <span class="float-left mt-1 ml-1">Tu proceso de pago fue {{ mipago?.estadoTransaccion  | translate }} {{ mipago?.fecha }}</span>
-              <div class="clearfix"></div>
-            </div>
-          </div>
-        </div>
-        <mat-accordion>
-          <mat-expansion-panel [expanded]="true">
-            <div class="row pt-3 align-items-center">
-              <div class="col-md-12 text-center">
-                  <div class="pay-item">
-                    <p class="pay-item-title"> Referencia: </p>
-                    <p class="pay-item-description ml-4">{{ mipago?.idPlaceTopay}}</p>
-                  </div>
-                  <div class="pay-item">
-                    <p class="pay-item-title"> Estado de la transacción: </p>
-                    <p class="pay-item-description ml-4">{{ mipago?.estadoTransaccion  | translate }}</p>
-                  </div>
-                  <div class="pay-item">
-                    <p class="pay-item-title"> Codigo de autorización: </p>
-                    <h5 class="pay-item-description ml-4">{{ mipago?.autorizacionCus }} </h5>
-                  </div>
-                  <div class="pay-item">
-                    <p class="pay-item-title"> Recibo: </p>
-                    <h5 class="pay-item-description ml-4">{{ mipago?.idRecibo }} </h5>
-                  </div>
 
-                  <!-- <div class="pay-item">
+            <div>
+                <div class="bg-zona pl-3 pr-3 pt-2 pb-2 text-white">
+                    <div class="row">
+                        <div class="col">
+                            <i class="material-icons float-left">assignment_ind</i>
+                            <span class="float-left mt-1 ml-1">Tu proceso de pago fue {{ mipago?.estadoTransaccion  | translate }} {{ mipago?.fecha }}</span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+                <mat-accordion>
+                    <mat-expansion-panel [expanded]="true">
+                        <div class="row pt-3 align-items-center">
+                            <div class="col-md-12 text-center">
+                                <div class="pay-item">
+                                    <p class="pay-item-title"> Referencia: </p>
+                                    <p class="pay-item-description ml-4">{{ mipago?.idPlaceTopay}}</p>
+                                </div>
+                                <div class="pay-item">
+                                    <p class="pay-item-title"> Estado de la transacción: </p>
+                                    <p class="pay-item-description ml-4">{{ mipago?.estadoTransaccion | translate }}</p>
+                                </div>
+                                <div class="pay-item">
+                                    <p class="pay-item-title"> Codigo de autorización: </p>
+                                    <h5 class="pay-item-description ml-4">{{ mipago?.autorizacionCus }} </h5>
+                                </div>
+                                <div class="pay-item">
+                                    <p class="pay-item-title"> Recibo: </p>
+                                    <h5 class="pay-item-description ml-4">{{ mipago?.idRecibo }} </h5>
+                                </div>
+
+                                <!-- <div class="pay-item">
                     <p class="pay-item-title"> Prestación: </p>
                     <p class="pay-item-description ml-4">{{ cita?.indRecepcionado }}</p>
                   </div> -->
-                  <div class="pay-item">
-                    <p class="pay-item-title"> Metodo de pago: </p>
-                    <p class="pay-item-description ml-4">{{ mipago?.metodoDePago }}</p>
-                  </div>
-                  <div class="pay-item">
-                    <p class="pay-item-title"> Valor de la transacción: </p>
-                    <p class="pay-item-description ml-4">{{ mipago?.totalPagado | currency: 'COP ' }}</p>
-                  </div>
-                  <div class="pay-item">
-                      <p class="pay-item-title"> fecha de la transacción: </p>
-                      <p class="pay-item-description ml-4">{{ mipago?.fecha }}</p>
-                    </div>
-              </div>
+                                <div class="pay-item">
+                                    <p class="pay-item-title"> Metodo de pago: </p>
+                                    <p class="pay-item-description ml-4">{{ mipago?.metodoDePago }}</p>
+                                </div>
+                                <div class="pay-item">
+                                    <p class="pay-item-title"> Valor de la transacción: </p>
+                                    <p class="pay-item-description ml-4">{{ mipago?.totalPagado | currency: 'COP ' }}</p>
+                                </div>
+                                <div class="pay-item">
+                                    <p class="pay-item-title"> fecha de la transacción: </p>
+                                    <p class="pay-item-description ml-4">{{ mipago?.fecha }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </mat-expansion-panel>
+                </mat-accordion>
             </div>
-          </mat-expansion-panel>
-        </mat-accordion>
-      </div>
 
+        </div>
     </div>
-  </div>
 </div>

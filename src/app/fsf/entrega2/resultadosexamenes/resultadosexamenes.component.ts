@@ -200,11 +200,11 @@ export class ResultadosexamenesComponent implements OnInit {
         this.spinnerService.hide()
       },3000)
     if(this.deviceDetectorService.isMobile()){
-      location.href = "https://fsfbxero.fsfb.org.co/?user=XEROUSER&password=x3r0v13w3r&PatiendID=" + this.const_Session.uid + "&relatedAccessionNumber=" + id + "&theme=eprDisplay"
+      location.href = "https://fsfbxero.fsfb.org.co/?user=XEROUSER&password=x3r0v13w3r&PatiendID=" + this.const_Session.uid + "&relatedAccessionNumber=" + id + "&theme=fsfbEprDisplayMobile"
     } else {
       var opciones = "toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=900, height=800, top=85, left=140";
       var navegador = navigator.appName;
-      window.open("https://fsfbxero.fsfb.org.co/?user=XEROUSER&password=x3r0v13w3r&PatiendID=" + this.const_Session.uid + "&relatedAccessionNumber=" + id + "&theme=eprDisplay", "", opciones);
+      window.open("https://fsfbxero.fsfb.org.co/?user=XEROUSER&password=x3r0v13w3r&PatiendID=" + this.const_Session.uid + "&relatedAccessionNumber=" + id + "&theme=fsfbEprDisplay", "", opciones);
     }
   }
 

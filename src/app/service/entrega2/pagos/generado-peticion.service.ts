@@ -17,15 +17,15 @@ export class GeneradoPeticionService {
   }
 
   getUrlPay(data) {
-    return this.http.post<any>(environment.endpointCA + '/CentralAutoriza/rest/PagosService/guardarTransaccion', data);
+    return this.http.post<any>(environment.endpointCA + '/CentralAutorizav2/rest/PagosService/guardarTransaccion', data);
   }
 
   getStatePay(id) {
-    return this.http.get<any>(environment.endpointCA + '/CentralAutoriza/rest/PagosService/resultadoTransaccion/' + id);
+    return this.http.get<any>(environment.endpointCA + '/CentralAutorizav2/rest/PagosService/resultadoTransaccion/' + id);
   }
 
   getPacienteHIS(data) {
-    return this.http.post<any>(environment.endpointCA + '/CentralAutoriza/rest/pacientes/consultaPaciente', data);
+    return this.http.post<any>(environment.endpointCA + '/CentralAutorizav2/rest/pacientes/consultaPaciente', data);
   }
 
 }

@@ -4,11 +4,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod --base-href /wps/contenthandler/dav/fs-type1/themes/FundacionZonaPrivada/",
+    "build": "ng build --prod --base-href /wps/contenthandler/dav/fs-type1/themes/FundacionZonaPrivadaPagosv1/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "uat": "ng build --c=uat "
+    "uat": "ng build --c=uat --base-href /wps/contenthandler/dav/fs-type1/themes/FundacionZonaPrivada/"
   },
   "private": true,
   "dependencies": {
@@ -46,7 +46,7 @@
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^0.13.8",
+    "@angular-devkit/build-angular": "^0.13.10",
     "@angular/cli": "~7.0.2",
     "@angular/compiler-cli": "^7.2.12",
     "@angular/language-service": "~7.0.0",

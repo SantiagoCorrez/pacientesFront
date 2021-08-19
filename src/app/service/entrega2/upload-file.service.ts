@@ -11,10 +11,10 @@ export class UploadFileService {
   constructor(private http: HttpClient) { }
 
   uploadFiles(fileSharePoint:FileSharePoint) {
-    return this.http.post<any>( environment.endpointCA + '/CentralAutoriza/rest/SharePoint/subirDoc', fileSharePoint);
+    return this.http.post<any>( environment.endpointCA + '/CentralAutorizav2/rest/SharePoint/subirDoc', fileSharePoint);
   }
 
   downloadFile(fileSharePoint:FileSharePoint) {
-    return this.http.post( environment.endpointCA + '/CentralAutoriza/rest/SharePoint/buscarDoc', fileSharePoint, {responseType: 'blob'});
+    return this.http.post( environment.endpointCA + '/CentralAutorizav2/rest/SharePoint/buscarDoc', fileSharePoint, {responseType: 'blob'});
   }
 }
